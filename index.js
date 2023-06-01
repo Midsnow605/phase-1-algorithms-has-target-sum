@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seen = new Set();
+
+  for (let num of array) {
+    const complement = target - num;
+    if (seen.has(complement)) {
+      return true;
+    }
+    seen.add(num);
+  }
+
+  return false;
+
 }
 
 /* 
